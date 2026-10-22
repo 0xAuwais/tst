@@ -14,21 +14,29 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	const char *f = s2;
-	const char *temp = ft_strchr(s1, f[0]);
-	size_t ff = len;
-    size_t fofo = 0;
-	while (*temp)
+	const char	*f;
+	const char	*temp;
+	const char	*mdre;
+	if (!*s2)
+		return ((char *)s1);
+	f = s2;
+	mdre = ft_strchr(s1, f[0]);
+	temp = mdre;
+	while (temp && *f && (size_t)(temp - s1) < len)
 	{
-        if (*temp != *f)
-            {
-                temp = ft_strchr(s1, f[0]);
-                fofo = 0;
-            }
-        fofo++;
-        temp++;
-        f++;
+		if (*temp != *f)
+		{
+			mdre = ft_strchr(mdre + 1, s2[0]);
+			temp = mdre;
+			f = s2;
+		}
+		else
+		{
+			temp++;
+			f++;
+		}
 	}
-    if (fofo == len)
-        return 
+	if (!*f)
+		return ((char *)mdre);
+	return (NULL);
 }
