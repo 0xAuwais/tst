@@ -12,65 +12,24 @@
 
 #include "libft.h"
 
-static int	auwais(char *s, int f, int i)
+int     ft_atoi(const char *nptr)
 {
-	if (ft_isdigit(*s))
-	{
-		f = (*s - '0');
-		s++;
-	}
-	else
-		return (0);
-	while ((ft_isdigit(*s) && *s) || *s == ' ')
-	{
-		if (*s == ' ')
-		{
-			s++;
-			continue ;
-		}
-		f *= 10;
-		f += (*s - '0');
-		s++;
-	}
-	f *= i;
-	return (f);
-}
+	const char *f = nptr;
+	int ans = 0;
+	int ff = 1;
+	while ((*f == ' '|| *f=='\t'||*f=='\n'||*f=='\v' ||*f=='\f' ||*f=='\r'))
+		{f++;}
 
-static int	is(char *c, int i, int f, char *s)
-{
-	while (*c)
+		if(*f == '-'){ff = -1;f++;}
+		else if(*f == '+'){f++;}
+		
+	while(*f)
 	{
-		if ((*c) == '-')
-		{
-			i *= -1;
+		if(!ft_isdigit(*f)){
+			return (ans);
 		}
-		else if (*c == '+')
-			i *= +1;
-		else if (*c == ' ')
-		{
-			c++;
-			continue ;
-		}
-		else
-			break ;
-		c++;
+		ans = ((ans*10 )+ ((*f - '0'))*ff);
+		f++;
 	}
-	s = c;
-	f = auwais(s, f, i);
-	return (f);
-}
-
-int	ft_atoi(char *str)
-{
-	int		f;
-	int		i;
-	char	*c;
-	char	*s;
-
-	c = str;
-	s = str;
-	f = 0;
-	i = 1;
-	f = is(c, i, f, s);
-	return (f);
+	return ans;
 }

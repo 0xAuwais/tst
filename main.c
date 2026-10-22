@@ -1,8 +1,9 @@
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <climits>
 int main(){
-    char s[] = "mdree";
-    char ss[] = "mereeeeeeeeeeeeeeeeee";
-    printf("%zu",ft_strlcat(s,ss,6));
+    // const char *f = "5";
+    // printf("%d\n",(*f - '0'));
+    printf("%d",ft_atoi(INT_MIN));
 }
