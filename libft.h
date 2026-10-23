@@ -53,6 +53,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void *ft_calloc(size_t nmemb, size_t size);
 void ft_striteri(char *s, void (*f)(unsigned int, char*));
+void ft_lstdelone(t_list *lst, void (*del)(void*));
 
 
 #endif
