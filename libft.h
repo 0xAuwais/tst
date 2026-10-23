@@ -54,6 +54,6 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void *ft_calloc(size_t nmemb, size_t size);
 void ft_striteri(char *s, void (*f)(unsigned int, char*));
 void ft_lstdelone(t_list *lst, void (*del)(void*));
-
+void ft_lstclear(t_list **lst, void (*del)(void*));
 
 #endif
