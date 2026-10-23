@@ -21,6 +21,7 @@ typedef struct s_list
 	struct s_list	*next;
 }		t_list;
 t_list *ft_lstnew(void *content);
+t_list *ft_lstlast(t_list *lst);
 void ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
