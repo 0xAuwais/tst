@@ -10,3 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char *ft_strdup(const char *s)
+{
+    size_t f = ft_strlen(s);
+    char *ff = malloc(f+1);
+    if (ff == NULL)
+        return NULL;
+    ft_strlcpy(ff, s, f+1);
+    return ff;
+}
