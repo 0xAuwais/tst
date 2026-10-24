@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	f = s2;
 	mdre = ft_strchr(s1, f[0]);
 	temp = mdre;
-	while (temp && *f && (size_t)(temp - s1) < len)
+	while (temp && *f && (size_t)(temp - s1)+1 <= len)
 	{
 		if (*temp != *f)
 		{
