@@ -2,6 +2,10 @@
 #include "libft.h"
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char)){
+        if (s == NULL || f == NULL)
+            {
+                return NULL;
+            }
         char *ff = malloc(ft_strlen(s) +1);
         if (ff == NULL){
             return NULL;

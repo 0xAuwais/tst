@@ -3,7 +3,7 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *)){
         
-        if (lst == NULL || f == NULL || del == NULL){
+        if (lst == NULL || f == NULL){
             return NULL;
         }
         t_list *mdre =NULL;
@@ -13,7 +13,8 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *)){
             fofo = f(lst->content);
             mdree = ft_lstnew(fofo);
             if (mdree == NULL){
-                del(fofo);
+                if (del)
+                    del(fofo);
                 ft_lstclear(&mdre, del);
                 return NULL;
             }

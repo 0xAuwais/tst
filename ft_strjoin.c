@@ -2,6 +2,8 @@
 #include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2){
+    if (s1 == NULL || s2 == NULL)
+        return NULL;
     char *f = malloc(ft_strlen(s1)+ft_strlen(s2) +1 );
     if (f == NULL)
         return NULL;

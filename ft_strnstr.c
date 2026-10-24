@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	const char	*mdre;
 	if (!*s2)
 		return ((char *)s1);
+	if (len == 0)
+		return (NULL);
 	f = s2;
 	mdre = ft_strchr(s1, f[0]);
 	temp = mdre;
